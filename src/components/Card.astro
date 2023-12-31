@@ -1,13 +1,14 @@
 ---
 interface Props {
 	title: string;
-	description: string;
+	role:string;
+	githubLink: string;
 	href: string;
 	borderSide: "left" | "right";
 	last?: "last";
 }
 
-const { href, title, description, borderSide, last } = Astro.props;
+const { href, title, role, githubLink, borderSide, last } = Astro.props;
 ---
 
 <div class="card">
@@ -17,12 +18,11 @@ const { href, title, description, borderSide, last } = Astro.props;
 				{title}
 			</a>
 			</h2>
-			<p>
-				{description}
-			</p>
+			<p>{role}</p>
 			<slot></slot>
 	</div>
 </div>
+
 <style>
 	.card {
 		position: relative;
@@ -30,46 +30,67 @@ const { href, title, description, borderSide, last } = Astro.props;
 	.content {
 		display: flex;
 		flex-direction: column;
-		padding-block: 48px;
+		padding-block: 30px;
+		padding-inline: 16px;
 		background-color: var(--background-color);
-		border-radius: 1000vw;
-	}
-	.content.left {
-		padding-left: 64px;
-	}
-	.content.right {
-		padding-right: 64px;
+		border-radius: 42px;
 	}
 	.content::before {
 		content: "";
 		position: absolute;
 		z-index: -1;
-		width: calc(50% + 20px);
-		top: calc(var(--strip-width) * -1);
-		bottom: calc(var(--strip-width) * -1);
+		width: calc(50% + var(--strip-width) * 2);
+		top: calc(var(--strip-width) * -1 );
+		bottom: calc(var(--strip-width) * -1 );
 		background-color: var(--accent-color);
-		background: linear-gradient(0deg, rgba(203,116,6,1) 10%, rgba(255,232,207,1) 45%, rgba(255,232,207,1) 55%, rgba(203,116,6,1) 90%);
+		background-image: var(--strip-gradient-top), var(--strip-gradient-bottom);
 		}
 	.content.left::before {
 		left: calc(var(--strip-width) * -1);
-		border-top-left-radius: 1000vw;
-		border-bottom-left-radius: 1000vw;
+		border-top-left-radius: calc(var(--strip-width) + 42px);
+		border-bottom-left-radius: calc(var(--strip-width) + 42px);
 	}
 	.content.right::before {
 		right: calc(var(--strip-width) * -1);
-		border-top-right-radius: 1000vw;
-		border-bottom-right-radius: 1000vw;
+		border-top-right-radius: calc(var(--strip-width) + 42px);
+		border-bottom-right-radius: calc(var(--strip-width) + 42px);
 	}
 	.content.last::before {
 		bottom: 0;
 	}
+
 	h2 {
-		margin: 0;
-		font-size: 1.75rem;
+		margin-block-end: 12px;
+		font-size: clamp(1.25rem, 2vw + 0.75rem, 1.75rem);
+		font-weight: 900;
 		line-height: 1;
 	}
 	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
+		font-weight: 800;
+	}
+
+	@media (min-width: 800px) {
+		.content {
+		padding-block: 80px;
+		border-radius: 1000vw;
+	}
+	.content.left {
+		padding-left: 146px;
+	}
+	.content.right {
+		padding-right: 146px;
+	}
+	.content::before {
+		width: calc(50%);
+		background: var(--strip-gradient);
+		}
+	.content.left::before {
+		border-top-left-radius: 1000vw;
+		border-bottom-left-radius: 1000vw;
+	}
+	.content.right::before {
+		border-top-right-radius: 1000vw;
+		border-bottom-right-radius: 1000vw;
+	}
 	}
 </style>

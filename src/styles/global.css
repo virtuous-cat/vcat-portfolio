@@ -82,21 +82,61 @@ button {
 /* Variables */
 
 :root {
-  --background-color: hsl(33, 30.3%, 12.9%);
-  --text-color: hsl(44, 86%, 91%);
+  --background-color: hsl(15, 5%, 16%);
+  /* --background-color: hsl(12, 12.8%, 7.6%); */
+  --text-color: hsl(39, 24%, 85%);
   --text-brighter: hsl(0, 11%, 85%);
-  --accent-color: hsl(34, 94%, 41%);
+  --accent-color-lighter: hsl(23, 87%, 54%);
+  --accent-color: hsl(23, 99%, 39%);
   --accent-color-darker: hsl(19, 64%, 42%);
-  --pop-color: #9ceaf8;
+  --pop-color: hsl(239, 100%, 91%);
+  --strip-gradient-top: linear-gradient(
+    to bottom,
+    hsl(23, 87%, 54%, 0) 0%,
+    hsl(27, 100%, 91%) 15px,
+    hsla(34, 94%, 41%, 0) 70px
+  );
+  --strip-gradient-bottom: linear-gradient(
+    to top,
+    hsl(23, 87%, 54%, 0) 0%,
+    hsl(27, 100%, 91%) 15px,
+    hsla(34, 94%, 41%, 0) 70px
+  );
+}
+
+@media (min-width: 800px) {
+  :root {
+    --strip-gradient: linear-gradient(
+      0deg,
+      var(--accent-color) 10%,
+      hsl(27, 100%, 91%) 45%,
+      hsl(27, 100%, 91%) 55%,
+      var(--accent-color) 90%
+    );
+  }
 }
 
 /* Typography */
 
 body {
-  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
-    source-sans-pro, sans-serif;
-  font-size: 1.25rem;
-
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
+}
+
+/* Default Styling */
+
+body {
+  padding: 8px;
+  background-color: var(--background-color);
+}
+
+p {
+  line-height: 1.2;
+  margin-block-start: 8px;
+}
+
+a {
+  color: var(--pop-color);
 }

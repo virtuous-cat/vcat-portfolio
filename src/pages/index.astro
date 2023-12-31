@@ -42,36 +42,71 @@ import Card from '../components/Card.astro';
 			<li class="right">
 				<Card
 					borderSide='left'
-					href="https://docs.astro.build/"
-					title="Documentation"
-					description="Learn how Astro works and explore the official API docs."
-				/>
+					href="https://www.bobaboard.com/"
+					githubLink='https://github.com/BobaBoard'
+					title="BobaBoard"
+					role='Role: Contractor & Core Team Member'
+				>
+					<p>BobaBoard is an Open Source project building a decentralized social media platform for fandom communities, with the larger goals of promoting a free and open web, and helping people from marginalized communities get into tech by making web development skills and education accessible to people from transformative fandom.</p> 
+
+					<p>I have been involved with BobaBoard since 2021 as both a volunteer and paid contributor. I was responsible for building our Realm invite system and Realm permissions (full stack), as well as numerous modular contributions throughout the codebases, including debugging history navigation issues and making the editor modal minimizable.</p>
+
+					<blockquote>
+						<p><em>"I've been continuously impressed by VCat's ability to deliver consistently high-quality work with little guidance. When faced with a new codebase, programming language or library, they have demonstrated an uncanny ability to dive in, independently get up to speed, and quickly become familiar with all that's needed to make progress."</em></p>
+						<footer>- Ms. Boba, Project Lead</footer>
+					</blockquote>
+			</Card>
 			</li>
 			<li class="left">
 				<Card
 					borderSide='right'
-					href="https://astro.build/integrations/"
-					title="Integrations"
-					description="Supercharge your project with new frameworks and libraries. Supercharge your project with new frameworks and libraries. Supercharge your project with new frameworks and libraries. Supercharge your project with new frameworks and libraries. Supercharge your project with new frameworks and libraries."
-				/>
+					href="https://github.com/virtuous-cat/boba-editor-next/"
+					githubLink="https://github.com/virtuous-cat/boba-editor-next/"
+					title="Astrolabe/BEN"
+					role='Role: Maintainer'
+				>
+				<p>
+					Astrolabe is a new Open Source WYSIWYG editor (extending TipTap/Prosemirror) that we intend to both use for BobaBoard and ensure is easily accessible to other fandom projects of all sizes (including both large community projects and individuals building independent personal sites), with the goal of better data-sharing and portability amongst community infrastructure. For more information on our goals, please see the <a href="https://github.com/virtuous-cat/boba-editor-next/blob/main/DESIGN.md">design doc</a>.
+				</p>
+				<p>Boba Editor Next (BEN) is our initial experimental implementation of the design for Astrolabe.</p>
+				</Card>
 			</li>
 			<li class="right">
 				<Card
 					borderSide='left'
-					href="https://astro.build/themes/"
-					title="Themes"
-					description="Explore a galaxy of community-built starter themes."
-				/>
+					href="https://www.daremegame.party"
+					githubLink="https://github.com/virtuous-cat/dare-me-svelte"
+					title="Dare Me"
+					role='Solo Project'
+				>
+				<p>A party game for adults with an emphasis on consent and negotiation. All the fun of Truth or Dare or Spin the Bottle, but each player gets to curate their own dare pool, letting everyone relax and not worry they are going to be asked to do something outside their limits or put unwelcome pressure on anyone else.</p>
+				</Card>
 
 			</li>
 			<li class="left">
 				<Card
-					last='last'
 					borderSide='right'
-					href="https://astro.build/chat/"
-					title="Community"
-					description="Come say hi to our amazing Discord community. ❤️"
-				/>
+					href=""
+					githubLink=''
+					title="D&D Homebrew Initiative Tracker"
+					role='Solo Project'
+				>
+			<p>A D&D initiative tracker for our homebrew initiative system. This initiative system was created by my DM's DM in the 1980's for 1st
+        edition AD&D. I have adapted it for 5E using the house rules described on the site.</p>
+			</Card>
+			</li>
+			<li class="right">
+				<Card
+					last='last'
+					borderSide='left'
+					href="https://pokesmash.neocities.org/"
+					githubLink='https://github.com/virtuous-cat/psop-tierlist-generator'
+					title="Pokemon Smash or Pass Tierlist Generator"
+					role='Solo Project'
+				>
+				<p>Markiplier made <a href="https://www.youtube.com/watch?v=gys9oDZj-MY">a video</a>, and I needed to make a website.</p>
+				<p>Is this website a joke? Yes. Is it fully functional? Also yes.</p>
+				</Card>
 			</li>
 		</ul>
 	</main>
@@ -79,12 +114,8 @@ import Card from '../components/Card.astro';
 
 <style>
 	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-		line-height: 1.6;
+		margin-inline: auto;
+		max-width: 800px;
 	}
 	.astro-a {
 		position: absolute;
@@ -127,12 +158,25 @@ import Card from '../components/Card.astro';
 	.instructions strong {
 		color: rgb(var(--accent-light));
 	}
+	blockquote {
+		margin-block-start: 12px;
+	}
+	blockquote footer {
+		text-align: right;
+		margin-block-start: 8px;
+	}
+	.link-card-grid {
+		--strip-width: 4px;
+		margin-inline: 8px;
+		display: grid;
+		row-gap: calc(var(--strip-width));
+	}
+	@media (min-width: 800px) {
 	.link-card-grid {
 		--strip-width: 12px;
-		display: grid;
-		grid-template-columns: 20% 1fr 20%;
-		grid-template-rows: repeat(4, auto);
-		row-gap: var(--strip-width);
+		margin-inline: 0;
+		grid-template-columns: 10% 1fr 10%;
+		grid-template-rows: repeat(auto-fit, auto);
 	}
 	.left {
 		grid-column: 1 / span 2;
@@ -140,5 +184,5 @@ import Card from '../components/Card.astro';
 	.right {
 		grid-column: 2 / span 2;
 	}
-
+	}
 </style>
