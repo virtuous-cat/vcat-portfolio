@@ -82,14 +82,15 @@ button {
 /* Variables */
 
 :root {
-  --background-color: hsl(15, 5%, 16%);
+  --background-color: #2b2827;
   /* --background-color: hsl(12, 12.8%, 7.6%); */
   --text-color: hsl(39, 24%, 85%);
   --text-brighter: hsl(0, 11%, 85%);
-  --accent-color-lighter: hsl(23, 87%, 54%);
-  --accent-color: hsl(23, 99%, 39%);
+  --accent-color-lighter: rgb(240, 114, 36);
+  --accent-color: rgb(198, 76, 1);
   --accent-color-darker: hsl(19, 64%, 42%);
   --pop-color: hsl(239, 100%, 91%);
+  --pop-color-darker: hsl(239, 82%, 81%);
   --strip-gradient-top: linear-gradient(
     to bottom,
     hsl(23, 87%, 54%, 0) 0%,
@@ -139,4 +140,8 @@ p {
 
 a {
   color: var(--pop-color);
+}
+
+a:visited {
+  color: var(--pop-color-darker);
 }
