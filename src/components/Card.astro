@@ -46,12 +46,12 @@ const { href, title, role, githubLink, borderSide, last } = Astro.props;
 		background-image: var(--strip-gradient-top), var(--strip-gradient-bottom);
 		}
 	.content.left::before {
-		left: calc(var(--strip-width) * -1);
+		left: calc(var(--strip-width) * -5);
 		border-top-left-radius: calc(var(--strip-width) + 42px);
 		border-bottom-left-radius: calc(var(--strip-width) + 42px);
 	}
 	.content.right::before {
-		right: calc(var(--strip-width) * -1);
+		right: calc(var(--strip-width) * -5);
 		border-top-right-radius: calc(var(--strip-width) + 42px);
 		border-bottom-right-radius: calc(var(--strip-width) + 42px);
 	}
@@ -81,7 +81,7 @@ const { href, title, role, githubLink, borderSide, last } = Astro.props;
 		padding-right: 146px;
 	}
 	.content::before {
-		width: calc(50%);
+		/* width: calc(50%); */
 		background: var(--strip-gradient);
 		}
 	.content.left::before {
