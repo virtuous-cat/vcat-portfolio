@@ -40,25 +40,24 @@ const { href, title, role, githubLink, borderSide, last } = Astro.props;
 		position: absolute;
 		z-index: -1;
 		width: calc(50% + var(--strip-width) * 2);
-		top: calc(var(--strip-width) * -1 );
-		bottom: calc(var(--strip-width) * -1 );
+		top: var(--block-width);
+		bottom: var(--block-width);
 		background-color: var(--accent-color);
 		background-image: var(--strip-gradient-top), var(--strip-gradient-bottom);
 		}
 	.content.left::before {
-		left: calc(var(--strip-width) * -5);
+		left: var(--side-width);
 		border-top-left-radius: calc(var(--strip-width) + 42px);
 		border-bottom-left-radius: calc(var(--strip-width) + 42px);
 	}
 	.content.right::before {
-		right: calc(var(--strip-width) * -5);
+		right: var(--side-width);
 		border-top-right-radius: calc(var(--strip-width) + 42px);
 		border-bottom-right-radius: calc(var(--strip-width) + 42px);
 	}
 	.content.last::before {
 		bottom: 0;
 	}
-
 	h2 {
 		margin-block-end: 12px;
 		font-size: clamp(1.25rem, 2vw + 0.75rem, 1.75rem);

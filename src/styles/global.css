@@ -86,22 +86,23 @@ button {
   /* --background-color: hsl(12, 12.8%, 7.6%); */
   --text-color: hsl(39, 24%, 85%);
   --text-brighter: hsl(0, 11%, 85%);
-  --accent-color-lighter: rgb(240, 114, 36);
-  --accent-color: rgb(198, 76, 1);
+  --accent-color-lighter: hsl(25, 75%, 70%);
+  --accent-color: hsl(23, 99%, 39%);
   --accent-color-darker: hsl(19, 64%, 42%);
   --pop-color: hsl(239, 100%, 91%);
   --pop-color-darker: hsl(239, 82%, 81%);
+  --pop-color-darkest: hsl(239, 80%, 69%);
   --strip-gradient-top: linear-gradient(
     to bottom,
     hsl(23, 87%, 54%, 0) 0%,
     hsl(27, 100%, 91%) 15px,
-    hsla(34, 94%, 41%, 0) 70px
+    hsl(34, 94%, 41%, 0) 70px
   );
   --strip-gradient-bottom: linear-gradient(
     to top,
     hsl(23, 87%, 54%, 0) 0%,
     hsl(27, 100%, 91%) 15px,
-    hsla(34, 94%, 41%, 0) 70px
+    hsl(34, 94%, 41%, 0) 70px
   );
 }
 
@@ -134,14 +135,47 @@ body {
 }
 
 p {
-  line-height: 1.2;
+  line-height: 1.25;
   margin-block-start: 8px;
 }
 
 a {
   color: var(--pop-color);
+  /* background-image: linear-gradient(
+    to top,
+    var(--pop-color-darkest),
+    50%,
+    var(--pop-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position-y: bottom -50%; */
 }
+/* .grad {
+  color: var(--pop-color);
+  background-image: linear-gradient(
+    to top,
+    var(--pop-color-darkest),
+    50%,
+    var(--pop-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position-y: -70px;
+} */
 
 a:visited {
   color: var(--pop-color-darker);
+  /* background-image: linear-gradient(
+    to top,
+    var(--pop-color-darkest),
+    50%,
+    var(--pop-color-darker)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position-y: bottom -50%; */
 }

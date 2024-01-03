@@ -1,21 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
+		<h1>VCat<a href="https://github.com/virtuous-cat"><img src="/icons/github-outline-fill.svg" alt="Github" width="40" /></a></h1>
 		<div class="intro-wrapper">
 			<div class="intro-inner-wrapper left">
 				<div class="intro">
-				<h1>VCat</h1>
-				<p class="title">
-					Freelance Software Developer
+				<p class="tagline">
+					I am a software developer with a focus on high-interactivity web apps. I love building things that do stuff.
 				</p>
-				<p>
-					Insert description
-				</p>
-				<p>Why "VCat"? I often work in communities with a culture of pseudonymity. In the interest of having all my work in one place, I have chosen to present my portfolio under the name I use in those communities.</p>
+				<p class="grad">I leverage my unconventional background in client care and 3D product design to create user-centric, accessible UI for delightful user experiences. I believe in the power of the internet to connect people, and seek to build and foster online spaces that empower genuine communities.</p>
+				<p class="text-gradient">My favourite tools include TypeScript, React, Svelte, Node.js, Redis, and PostgreSQL, but nothing makes me more excited than learning something new.</p>
+				<p>I am passionate about science and science communication; queer culture, fan culture, and the intersection of the two; musical theatre; and Dungeons & Dragons.</p>
+				<p class="work"><strong>Interested in working with me? <a class="inline" href="mailto:vcat.webdev@gmail.com">Drop me a line.</a> I am currently open to both contract and long-term opportunities.</strong></p>
+				<p class="vcat"><em>Why "VCat"?</em>  I often work in communities with a culture of pseudonymity. In the interest of having all my work in one place, I have chosen to present this portfolio under the name I use for dev work in those communities.</p>
 			</div>
 			</div>
 </div>
@@ -47,7 +49,7 @@ import Card from '../components/Card.astro';
 					role='Role: Maintainer'
 				>
 				<p>
-					Astrolabe is a new Open Source WYSIWYG editor (extending TipTap/Prosemirror) that we intend to both use for BobaBoard and ensure is easily accessible to other fandom projects of all sizes (including both large community projects and individuals building independent personal sites), with the goal of better data-sharing and portability amongst community infrastructure. For more information on our goals, please see the <a href="https://github.com/virtuous-cat/boba-editor-next/blob/main/DESIGN.md">design doc</a>.
+					Astrolabe is a new Open Source WYSIWYG editor (extending TipTap/Prosemirror) that we intend to both use for BobaBoard and ensure is easily accessible to other fandom projects of all sizes (including both large community projects and individuals building independent personal sites), with the goal of better data-sharing and portability amongst community infrastructure. For more information on our goals, please see the <a class="inline" href="https://github.com/virtuous-cat/boba-editor-next/blob/main/DESIGN.md">design doc</a>.
 				</p>
 				<p>Boba Editor Next (BEN) is our initial experimental implementation of the design for Astrolabe.</p>
 				</Card>
@@ -101,38 +103,39 @@ import Card from '../components/Card.astro';
 		max-width: 900px;
 	}
 	h1 {
-		font-size: 4rem;
+		font-size: clamp(4rem, 15vw - 1rem, 8rem);
 		font-family: "handsome-pro", 'Segoe Print', 'Bradley Hand', Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
-font-weight: 700;
-font-style: normal;
 		font-weight: 700;
 		line-height: 1;
 		color: var(--pop-color);
+		margin-inline: 24px;
+		margin-block-start: 0.5em;
 	}
-	.text-gradient {
+	h1 img {
+		display: inline-block;
+		color: var(--accent-color-lighter);
+	}
+	.tagline {
+		margin-block-end: 8px;
+		font-weight: 900;
+	}
+	.vcat {
+		margin-block-start: 16px;
+		color: var(--accent-color-lighter);
+	}
+	.work {
+		margin-block-start: 16px;
+	}
+	/* .text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
+		background-position-y: -1150px;
+		transition: background-position-y 300ms ease-in;
+	} */
+	.text-gradient:hover {
+		background-position-y: 0%;
 	}
 	blockquote {
 		margin-block-start: 12px;
@@ -143,6 +146,8 @@ font-style: normal;
 	}
 	.link-card-grid, .intro-wrapper {
 		--strip-width: 4px;
+		--block-width: calc(var(--strip-width) * -1);
+		--side-width: calc(var(--block-width) * 1);
 		margin-inline: 8px;
 		display: grid;
 		row-gap: calc(var(--strip-width));
@@ -154,10 +159,10 @@ font-style: normal;
 	.intro {
 		display: flex;
 		flex-direction: column;
-		padding-block: 30px;
+		padding-block-end: 30px;
 		padding-inline: 16px;
 		background-color: var(--background-color);
-		border-radius: 42px;
+		border-bottom-right-radius: 42px;
 	}
 	.intro::before {
 		content: "";
@@ -165,17 +170,21 @@ font-style: normal;
 		z-index: -1;
 		width: calc(50% + var(--strip-width) * 2);
 		top: 0;
-		bottom: calc(var(--strip-width) * -1 );
+		bottom: var(--block-width);
 		background-color: var(--accent-color);
 		background-image: var(--strip-gradient-top), var(--strip-gradient-bottom);
-		right: calc(var(--strip-width) * -5);
-		border-top-right-radius: calc(var(--strip-width) + 42px);
+		right: var(--side-width);
+		border-top-right-radius: calc(var(--strip-width) + 25px);
 		border-bottom-right-radius: calc(var(--strip-width) + 42px);
 		}
 
 	@media (min-width: 800px) {
+		h1 {
+			margin-inline: 8px;
+		}
 		.intro {
-		padding-block: 80px;
+		--side-width: 0;
+		padding-block-end: 80px;
 		border-radius: 1000vw;
 		padding-right: 146px;
 	}
@@ -187,6 +196,7 @@ font-style: normal;
 	}
 	.link-card-grid, .intro-wrapper {
 		--strip-width: 12px;
+		--side-width: calc(var(--block-width) * 1.5);
 		margin-inline: 0;
 		grid-template-columns: 10% 1fr 10%;
 	}
