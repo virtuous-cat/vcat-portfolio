@@ -14,6 +14,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="I am a software developer with a focus on high-interactivity web apps. I love building things that do stuff." />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="https://use.typekit.net/pjb3xjg.css">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -21,8 +22,12 @@ const { title } = Astro.props;
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#2b5797">
 		<meta name="theme-color" content="#2b2827">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="VCat's Portfolio">
+		<meta property="og:url" content="https://www.virtuouscat.dev">
+		<meta property="og:image" content="https://www.virtuouscat.dev/ogimage.jpg">
+		<meta property="og:description" content="I'm VCat, a software developer with a focus on high-interactivity web apps. I love building things that do stuff.">
 		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="https://use.typekit.net/pjb3xjg.css">
 		<title>{title}</title>
 	</head>
 	<body>
@@ -32,17 +37,7 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			0deg,
-			red,
-			blue
-		);
-	}
+<style>
 	header {
 		min-height: 24px;
 	}
