@@ -27,11 +27,11 @@ import Card from '../components/Card.astro';
 			<div class="intro-inner-wrapper left">
 				<div class="intro">
 				<p class="tagline">
-					I am a software developer with a focus on high-interactivity web apps. I love building things that do stuff.
+					I'm a software developer with a focus on high-interactivity web apps.<br />I love building things that do stuff.
 				</p>
 				<p>I leverage my unconventional background in client care and 3D product design to create user-centric, accessible UI for delightful user experiences. I believe in the power of the internet to connect people, and seek to build and foster online spaces that empower genuine communities.</p>
-				<p>My favourite tools include TypeScript, React, Svelte, Node.js, Redis, and PostgreSQL, but nothing makes me more excited than learning something new.</p>
-				<p>I am passionate about science and science communication; queer culture, fan culture, and the intersection of the two; musical theatre; and Dungeons & Dragons.</p>
+				<p>My favourite tools include <strong>TypeScript, React, Svelte, Node.js, Redis,</strong> and <strong>PostgreSQL</strong>, but nothing makes me more excited than learning something new.</p>
+				<p>I'm passionate about science and science communication; queer culture, fan culture, and the intersection of the two; musical theatre; and Dungeons & Dragons.</p>
 				<p class="work"><strong>Interested in working with me? <a class="inline" href="mailto:vcat.webdev@gmail.com">Drop me a line.</a> I am currently open to both contract and long-term opportunities.</strong></p>
 				<p class="vcat"><em>Why "VCat"?</em>  I often work in communities with a culture of pseudonymity. In the interest of having all my work in one place, I have chosen to present this portfolio under the name I use for dev work in those communities.</p>
 			</div>
@@ -44,7 +44,9 @@ import Card from '../components/Card.astro';
 					href="https://www.bobaboard.com/"
 					githubLink='https://github.com/BobaBoard'
 					title="BobaBoard"
-					role='Role: Contractor & Core Team Member'
+					role='Contractor & Core Team Member'
+					withRoleTag
+					tech='TypeScript, React, Next.js, React Query, Storybook, Jest, Node.js, Express, PostgreSQL'
 				>
 					<p>BobaBoard is an Open Source project building a decentralized social media platform for fandom communities, with the larger goals of promoting a free and open web, and helping people from marginalized communities get into tech by making web development skills and education accessible to people from transformative fandom.</p> 
 
@@ -62,7 +64,9 @@ import Card from '../components/Card.astro';
 					href="https://github.com/virtuous-cat/boba-editor-next/"
 					githubLink="https://github.com/virtuous-cat/boba-editor-next/"
 					title="Astrolabe/BEN"
-					role='Role: Maintainer'
+					role='Maintainer'
+					withRoleTag
+					tech='TypeScript, React, Storybook, TipTap/Prosemirror, TurboRepo, Vite'
 				>
 				<p>
 					Astrolabe is a new Open Source WYSIWYG editor (extending TipTap/Prosemirror) that we intend to both use for BobaBoard and ensure is easily accessible to other fandom projects of all sizes (including both large community projects and individuals building independent personal sites), with the goal of better data-sharing and portability amongst community infrastructure. For more information on our goals, please see the <a class="inline" href="https://github.com/virtuous-cat/boba-editor-next/blob/main/DESIGN.md">design doc</a>.
@@ -77,9 +81,10 @@ import Card from '../components/Card.astro';
 					githubLink="https://github.com/virtuous-cat/dare-me-svelte"
 					title="Dare Me"
 					role='Solo Project'
+					tech='TypeScript, Svelte, Sveltekit, Socket.IO, Redis, Prisma, Zod, PostgreSQL'
 				>
 				<p>A party game for adults with an emphasis on consent and negotiation. All the fun of Truth or Dare or Spin the Bottle, but each player gets to curate their own dare pool, letting everyone relax and not worry they are going to be asked to do something outside their limits or put unwelcome pressure on anyone else.</p>
-				<p>Build with Svelte, Sveltekit, Socket.IO, Redis, Prisma, Zod and PostgreSQL. Both the game design and the website are currently in the alpha stage, with on-going development of all features and a number of additional features planned for the future.</p>
+				<p>Both the game design and the website are currently in the alpha stage, with on-going development of all features and a number of additional features planned for the future.</p>
 				</Card>
 
 			</li>
@@ -90,6 +95,7 @@ import Card from '../components/Card.astro';
 					githubLink='https://github.com/virtuous-cat/initiative-tracker'
 					title="D&D Homebrew Initiative Tracker"
 					role='Solo Project'
+					tech='TypeScript, Svelte, Vite'
 				>
 			<p>A Dungeons & Dragons initiative tracker for our homebrew initiative system. This initiative system was created by my DM's DM in the 1980's for 1st
         edition AD&D. I have adapted it for 5E using the house rules described on the site.</p>
@@ -104,6 +110,7 @@ import Card from '../components/Card.astro';
 					githubLink='https://github.com/virtuous-cat/psop-tierlist-generator'
 					title="PSOP Tierlist Generator"
 					role='Solo Project'
+					tech='JavaScript, HTML, CSS, Dragula'
 				>
 				<p>Markiplier made a video, and I needed to make a website.</p>
 				<p>Is this website a joke? Yes. Is it fully functional? Also yes.</p>
@@ -172,6 +179,7 @@ import Card from '../components/Card.astro';
 	}
 	blockquote {
 		margin-block-start: 12px;
+		color: var(--accent-color-lighter);
 	}
 	blockquote footer {
 		text-align: right;
@@ -222,7 +230,6 @@ import Card from '../components/Card.astro';
 		padding-right: 146px;
 	}
 	.intro::before {
-		/* width: calc(50%); */
 		background: var(--strip-gradient);
 		border-top-right-radius: 1000vw;
 		border-bottom-right-radius: 1000vw;
@@ -238,6 +245,30 @@ import Card from '../components/Card.astro';
 	}
 	.right {
 		grid-column: 2 / span 2;
+	}
+
+	@supports (animation-timeline: view()) {
+		@media (prefers-reduced-motion: no-preference) {
+				.intro::before {
+					--strip-gradient: linear-gradient(
+						0deg,
+						var(--accent-color) 30%,
+						hsl(27, 100%, 91%) 47%,
+						hsl(27, 100%, 91%) 53%,
+						var(--accent-color) 70%
+					);
+					background-size: auto 200%;
+					background-position-y: 60%;
+					transition: all 300ms linear;
+					animation: large-bg-shine linear;
+					animation-timeline: view();
+				}
+
+				@keyframes large-bg-shine {
+					from {background-position-y: 60%;}
+					to {background-position-y: 40%;}
+				}
+		}
 	}
 	}
 </style>

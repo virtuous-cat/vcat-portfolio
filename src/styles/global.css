@@ -129,6 +129,11 @@ body {
 
 /* Default Styling */
 
+/* TODO: When available in chrome, set scrollbar colors for dark mode.
+:root {
+  scrollbar-color: hsl(39, 24%, 85%, 60%) hsl(0, 0%, 13%);
+} */
+
 body {
   padding: 8px;
   background-color: var(--background-color);
