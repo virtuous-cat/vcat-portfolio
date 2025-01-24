@@ -1,3 +1,21 @@
 {
-  "cSpell.words": ["astro"]
+  "cSpell.words": ["astro"],
+  "workbench.colorCustomizations": {
+    "commandCenter.border": "#e7e7e799",
+    "editorGroup.border": "#825492",
+    "panel.border": "#825492",
+    "sash.hoverBorder": "#825492",
+    "sideBar.border": "#825492",
+    "statusBar.background": "#654172",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#825492",
+    "statusBarItem.remoteBackground": "#654172",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "tab.activeBorder": "#825492",
+    "titleBar.activeBackground": "#654172",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#65417299",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.remoteColor": "#654172"
 }
