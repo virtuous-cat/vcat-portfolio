@@ -6,10 +6,10 @@ import Card from '../components/Card.astro';
 
 <Layout title="VCat">
 	<main>
-		<div class="name">
+		<div>
+			<a class="name" href="https://github.com/virtuous-cat">
 			<h1>VCat
 			</h1>
-			<a href="https://github.com/virtuous-cat">
 				<svg aria-label="Github" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
 					<defs>
 						<linearGradient id="Gradient1" x1="1" x2="0" y1="0" y2="1">
@@ -31,8 +31,9 @@ import Card from '../components/Card.astro';
 				</p>
 				<p>I leverage my unconventional background in client care and 3D product design to create user-centric, accessible UI for delightful user experiences. I believe in the power of the internet to connect people, and seek to build and foster online spaces that empower genuine communities.</p>
 				<p>My favourite tools include <strong>TypeScript, React, Svelte, Node.js, Redis,</strong> and <strong>PostgreSQL</strong>, but nothing makes me more excited than learning something new.</p>
+				<p>As of Sept 2024, I have gone back to school to formalize my computer science education and expand my industry-relevant knowledge-base to other areas of software development, including <strong>Python, Java,</strong> and <strong>C</strong>.</p>
 				<p>I'm passionate about science and science communication; queer culture, fan culture, and the intersection of the two; musical theatre; and Dungeons & Dragons.</p>
-				<p class="work"><strong>Interested in working with me? <a class="inline" href="mailto:vcat.webdev@gmail.com">Drop me a line.</a> I am currently open to both contract and long-term opportunities.</strong></p>
+				<p class="work"><strong>Interested in working with me? <a class="inline" href="mailto:vcat.webdev@gmail.com">Drop me a line.</a> I am currently looking for a 4-8 month co-op/internship position starting May 2025.</strong></p>
 				<p class="vcat"><em>Why "VCat"?</em>  I often work in communities with a culture of pseudonymity. In the interest of having all my work in one place, I have chosen to present this portfolio under the name I use for dev work in those communities.</p>
 			</div>
 			</div>
@@ -41,10 +42,10 @@ import Card from '../components/Card.astro';
 			<li class="right">
 				<Card
 					borderSide='left'
-					href="https://www.bobaboard.com/"
-					githubLink='https://github.com/BobaBoard'
+					href="https://github.com/BobaBoard"
+					githubLink
 					title="BobaBoard"
-					role='Contractor & Core Team Member'
+					role='Steering Team Member, Engineering Team Member, Contractor'
 					withRoleTag
 					tech='TypeScript, React, Next.js, React Query, Storybook, Jest, Node.js, Express, PostgreSQL'
 				>
@@ -54,22 +55,22 @@ import Card from '../components/Card.astro';
 
 					<blockquote>
 						<p><em>"I've been continuously impressed by VCat's ability to deliver consistently high-quality work with little guidance. When faced with a new codebase, programming language or library, they have demonstrated an uncanny ability to dive in, independently get up to speed, and quickly become familiar with all that's needed to make progress."</em></p>
-						<footer>- Ms. Boba, Project Lead</footer>
+						<footer>- Ms. Boba, Project Founder</footer>
 					</blockquote>
 			</Card>
 			</li>
 			<li class="left">
 				<Card
 					borderSide='right'
-					href="https://github.com/virtuous-cat/boba-editor-next/"
-					githubLink="https://github.com/virtuous-cat/boba-editor-next/"
+					href="https://github.com/FujoWebDev/astrolabe"
+					githubLink
 					title="Astrolabe/BEN"
 					role='Maintainer'
 					withRoleTag
 					tech='TypeScript, React, Storybook, TipTap/Prosemirror, TurboRepo, Vite'
 				>
 				<p>
-					Astrolabe is a new Open Source WYSIWYG editor (extending TipTap/Prosemirror) that we intend to both use for BobaBoard and ensure is easily accessible to other fandom projects of all sizes (including both large community projects and individuals building independent personal sites), with the goal of better data-sharing and portability amongst community infrastructure. For more information on our goals, please see the <a class="inline" href="https://github.com/virtuous-cat/boba-editor-next/blob/main/DESIGN.md">design doc</a>.
+					Astrolabe is a new Open Source WYSIWYG editor (extending TipTap/Prosemirror) that we intend to both use for BobaBoard and ensure is easily accessible to other fandom projects of all sizes (including both large community projects and individuals building independent personal sites), with the goal of better data-sharing and portability amongst community infrastructure. For more information on our goals, please see the <a class="inline" href="https://github.com/FujoWebDev/astrolabe/blob/main/DESIGN.md">design doc</a>.
 				</p>
 				<p>Boba Editor Next (BEN) is our initial experimental implementation of the design for Astrolabe.</p>
 				</Card>
@@ -77,22 +78,73 @@ import Card from '../components/Card.astro';
 			<li class="right">
 				<Card
 					borderSide='left'
-					href="https://www.daremegame.party"
-					githubLink="https://github.com/virtuous-cat/dare-me-svelte"
-					title="Dare Me"
-					role='Solo Project'
-					tech='TypeScript, Svelte, Sveltekit, Socket.IO, Redis, Prisma, Zod, PostgreSQL'
+					href="https://store.fujocoded.com"
+					title="FujoCoded Store"
+					role='Contractor - Project Lead'
+					withRoleTag
+					tech='TypeScript, React, Next.js, Tailwind, Shopify'
 				>
-				<p>A party game for adults with an emphasis on consent and negotiation. All the fun of Truth or Dare or Spin the Bottle, but each player gets to curate their own dare pool, letting everyone relax and not worry they are going to be asked to do something outside their limits or put unwelcome pressure on anyone else.</p>
-				<p>Both the game design and the website are currently in the alpha stage, with on-going development of all features and a number of additional features planned for the future.</p>
+				<p>I project-managed and led programming of a new e-commerce front-end, including overhauling and restructuring the Next.js commerce template to align with mockup from designer and meet evolving business requirements.</p>
+				<p>I also coordinated and executed the migration of the existing e-commerce back-end from Ecwid to Shopify to minimize work needed from the client to ensure the new store was ready for the target launch date.</p>
 				</Card>
 
 			</li>
 			<li class="left">
 				<Card
 					borderSide='right'
-					href="https://virtuous-cat.github.io/initiative-tracker/"
-					githubLink='https://github.com/virtuous-cat/initiative-tracker'
+					href="https://github.com/virtuous-cat/dare-me-svelte"
+					githubLink
+					title="Dare Me"
+					role='Personal Solo Project'
+					tech='TypeScript, Svelte, Sveltekit, Socket.IO, Redis, Prisma, Zod, PostgreSQL'
+				>
+				<p>A party game for adults with an emphasis on consent and negotiation. All the fun of Truth or Dare or Spin the Bottle, but each player gets to curate their own dare pool, letting everyone relax and not worry they are going to be asked to do something outside their limits or put unwelcome pressure on anyone else.</p>
+				<p>Both the game design and the website are currently in the alpha stage, with on-going development of all features and a number of additional features planned for the future.</p>
+				</Card>
+			</li>
+			<li class="right">
+				<Card
+					borderSide='left'
+					href="https://designs.joshuastarr.ca/"
+					title="Starr Designs"
+					role='Contractor'
+					withRoleTag
+					tech='TypeScript, Astro, SCSS'
+				>
+				<p>I designed, built, and deployed this marketing website for a small business specializing in t-shirt printing.</p>
+				<p>I leveraged SCSS to generate a semi-random rainbow gradient of stars for the hero background that is slightly different with each build of the website.</p>
+				</Card>
+			</li>
+			<li class="left">
+				<Card
+					borderSide='right'
+					href="#"
+					title="Strands of Time"
+					role='Academic Solo Project, continued as Personal Solo Project'
+					tech='Python'
+				>
+				<p>A CLI game of time-travel and weaving rainbows. I developed an algorithm for sorting colour sequences based on the player’s response sequence to create a unique play experience, and implemented a 9x3 (X, Y) coordinate system using a 2D list to create a map and allow the player to win clues to whether they are getting closer or farther from the randomly located level goal.</p>
+				<p>As this is an academic project, please contact me directly for the GitHub link.</p>
+				</Card>
+			</li>
+			<li class="right">
+				<Card
+					borderSide='left'
+					href="https://comp1800-202430-dtc14.web.app/"
+					title="Care Compass"
+					role='Academic Group Project'
+					tech='JavaScript, jQuery, HTML, CSS, Bootstrap, Firebase Auth, Firebase Firestore'
+				>
+				<p>I led our three-person Agile team in building a demo for a web app to help Canadians find and track healthcare information across government agencies and websites. I designed and implemented the Firebase Firestore database structure, leveraging keyword aliases to group related information and allowing users to subscribe to fine-grained subsets of results. Future work towards a full implementation could include the webcrawler needed to gather the page data from the source sites.</p>
+				<p>As this is an academic project, please contact me directly for the GitHub link.</p>
+				</Card>
+			</li>
+			<li class="left">
+				<Card
+					last='last'
+					borderSide='right'
+					href="https://github.com/virtuous-cat/initiative-tracker/"
+					githubLink
 					title="D&D Homebrew Initiative Tracker"
 					role='Solo Project'
 					tech='TypeScript, Svelte, Vite'
@@ -101,20 +153,6 @@ import Card from '../components/Card.astro';
         edition AD&D. I have adapted it for 5E using the house rules described on the site.</p>
 			<p>A quick little app put together with Svelte and Vite that has made running my game a whole lot easier.</p>
 			</Card>
-			</li>
-			<li class="right">
-				<Card
-					last='last'
-					borderSide='left'
-					href="https://github.com/virtuous-cat/psop-tierlist-generator"
-					githubLink='https://github.com/virtuous-cat/psop-tierlist-generator'
-					title="PSOP Tierlist Generator"
-					role='Solo Project'
-					tech='JavaScript, HTML, CSS, Dragula'
-				>
-				<p>Markiplier made a video, and I needed to make a website.</p>
-				<p>Is this website a joke? Yes. Is it fully functional? Also yes.</p>
-				</Card>
 			</li>
 		</ul>
 	</main>
@@ -126,26 +164,26 @@ import Card from '../components/Card.astro';
 		max-width: 900px;
 	}
 	.name {
-		display: flex;
+		display: inline-flex;
 		flex-wrap: wrap;
 		row-gap: 12px;
 		column-gap: 0.25em; 
 		font-size: clamp(2rem, 10vw - 1rem, 4rem);
-		margin-inline: 24px;
 		margin-block-start: 0.5em;
 		z-index: 2;
+		text-decoration: none;
 	}
 	h1 {
+		margin-inline-start: 24px;
 		font-family: "handsome-pro", 'Segoe Print', 'Bradley Hand', Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
 		font-weight: 700;
 		line-height: 1;
 		color: var(--pop-color);
 	}
-	.name a {
-		align-self: flex-end;
-	}
 	.name svg {
+		align-self: flex-end;
 		width: 0.75em;
+		margin-block-end: 0.25em;
 	}
 	.github {
 		color: var(--accent-color-lighter);

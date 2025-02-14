@@ -159,21 +159,21 @@ a {
   -webkit-text-fill-color: transparent;
   background-size: auto 200%;
   background-position-y: top;
-  transition: background-position-y 650ms ease-in-out;
+  transition: background-position-y 0ms;
 }
 a:hover,
 a:focus-visible {
   background-position-y: 100%;
-  transition-duration: 450ms;
+  transition-duration: 0ms;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   a {
-    transition: background-position-y 650ms ease-in-out;
+    transition: background-position-y 550ms ease-in-out;
   }
   a:hover,
   a:focus-visible {
-    transition-duration: 450ms;
+    transition-duration: 350ms;
   }
 }
 
